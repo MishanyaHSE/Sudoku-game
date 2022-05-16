@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lobanovich.michael.kursach.SceneController">
+  <children>
+    <AnchorPane fx:id="mainAnchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TextArea fx:id="rulesText" editable="false" layoutX="13.0" layoutY="14.0" prefHeight="289.0" prefWidth="614.0" text="Правила игры:&#10;Заполните поле числами от 1 до 9 так, чтобы в столбцах, строчках и секциях не было повторов.&#10;Для судоку-звездочки числа не должны повторяться на диагоналях, соответствующих схеме&#10;отображающейся при нажатии на клетку поля.&#10;Для того, чтобы вставить число, нажмите на клетку, а затем на одну из кнопок, расположенных&#10;под полем. Вставленное число будет соответствовать цифре, обозначенной на кнопке.&#10;Правильные ответы подсвечиваются зеленым цветом, неправильные - красным. &#10;Удачи!&#10;" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor></TextArea>
+            <Button fx:id="classicMode" layoutX="252.0" layoutY="146.0" mnemonicParsing="false" onAction="#classicModeClick" prefHeight="26.0" prefWidth="138.0" text="Классический" visible="false" />
+            <Button fx:id="snowfallMode" layoutX="252.0" layoutY="200.0" mnemonicParsing="false" onAction="#snowfallModeClick" prefHeight="26.0" prefWidth="138.0" text="Судоку-снежинка" visible="false" />
+            <HBox fx:id="numberButtons" disable="true" layoutX="48.0" layoutY="358.0" prefHeight="26.0" prefWidth="300.0" spacing="10.0" visible="false">
+               <children>
+                  <Button fx:id="one" mnemonicParsing="false" text="1" />
+                  <Button fx:id="two" mnemonicParsing="false" text="2" />
+                  <Button fx:id="three" mnemonicParsing="false" text="3" />
+                  <Button fx:id="four" mnemonicParsing="false" text="4" />
+                  <Button fx:id="five" mnemonicParsing="false" text="5" />
+                  <Button fx:id="six" mnemonicParsing="false" text="6" />
+                  <Button fx:id="seven" mnemonicParsing="false" text="7" />
+                  <Button fx:id="eight" mnemonicParsing="false" text="8" />
+                  <Button fx:id="nine" mnemonicParsing="false" prefWidth="24.0" text="9" />
+               </children>
+            </HBox>
+            <GridPane fx:id="field" gridLinesVisible="true" layoutX="48.0" layoutY="36.0" prefHeight="300.0" prefWidth="300.0" visible="false">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Button fx:id="mainMenu" layoutX="517.0" layoutY="358.0" mnemonicParsing="false" onAction="#backToMainClick" text="Главное меню" visible="false" />
+            <Button fx:id="backToMain" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#backToMainClick" text="Назад" visible="false" />
+            <VBox fx:id="infoNameBox" layoutX="420.0" layoutY="86.0" prefHeight="105.0" prefWidth="138.0" spacing="15.0" visible="false">
+               <children>
+                  <Label text="Количество ходов:" />
+                  <Label text="Количество ошибок:" />
+                  <Label text="Количество подсказок:" />
+               </children>
+            </VBox>
+            <VBox fx:id="infoBox" layoutX="565.0" layoutY="86.0" prefHeight="106.0" prefWidth="66.0" spacing="15.0" visible="false">
+               <children>
+                  <Label fx:id="numberOfMoves" text="0" />
+                  <Label fx:id="numberOfMistakes" text="0" />
+                  <Label fx:id="numberOfHints" text="0" />
+               </children>
+            </VBox>
+            <VBox fx:id="mainMenuBox" layoutX="251.0" layoutY="86.0" prefHeight="200.0" prefWidth="138.0" spacing="25.0">
+               <children>
+                  <Button fx:id="continueGame" mnemonicParsing="false" onAction="#continueGameClick" prefHeight="26.0" prefWidth="138.0" text="Продолжить игру" />
+                  <Button fx:id="startGame" mnemonicParsing="false" onAction="#startGameClick" prefHeight="26.0" prefWidth="138.0" text="Начать игру" textFill="#151515" />
+                  <Button fx:id="rules" mnemonicParsing="false" onAction="#rulesClick" prefHeight="26.0" prefWidth="138.0" text="Правила игры" />
+                  <Button fx:id="quit" mnemonicParsing="false" onAction="#quitClick" prefHeight="26.0" prefWidth="138.0" text="Выйти" />
+               </children>
+            </VBox>
+            <Button fx:id="hintButton" layoutX="454.0" layoutY="186.0" mnemonicParsing="false" onAction="#hintButtonClick" prefHeight="26.0" prefWidth="103.0" text="Подсказка" visible="false" />
+            <VBox fx:id="complexityBox" layoutX="252.0" layoutY="86.0" prefHeight="200.0" prefWidth="138.0" spacing="25.0" visible="false">
+               <children>
+                  <Button fx:id="easyButton" mnemonicParsing="false" onAction="#easyClick" prefHeight="26.0" prefWidth="138.0" text="Легкий" />
+                  <Button fx:id="mediumButton" mnemonicParsing="false" onAction="#mediumClick" prefHeight="26.0" prefWidth="138.0" text="Средний" />
+                  <Button fx:id="hardButton" mnemonicParsing="false" onAction="#hardClick" prefHeight="26.0" prefWidth="138.0" text="Сложный" />
+               </children>
+            </VBox>
+            <Button fx:id="backToComplexity" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#backToComplexityClick" text="Назад" visible="false" />
+            <Text fx:id="congratulations" layoutX="461.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Судоку решено!" visible="false" />
+            <Button fx:id="startNewGame" layoutX="466.0" layoutY="286.0" mnemonicParsing="false" onAction="#startGameClick" text="Новая игра" visible="false" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
